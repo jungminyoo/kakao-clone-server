@@ -1,0 +1,27 @@
+{
+  "name": "kakao-clone-server",
+  "version": "1.0.0",
+  "description": "Backend for Kakao Clone Coding Study Group. Using NodeJS, ExpressJS, Socket.IO",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-project:jungminyoo/kakao-clone-server.git"
+  },
+  "author": "Jungmin Yoo",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "babel-loader": "^8.2.2",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
