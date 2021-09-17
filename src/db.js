@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import ioServer from "./index";
-import { createAdapter } from "@socket.io/mongo-adapter";
 
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
@@ -8,18 +6,8 @@ mongoose.connect(process.env.DB_URL, {
 });
 
 const db = mongoose.connection;
-const IOCONNECTION = "socket.io-adapter";
 
-const handleOpen = async () => {
-  console.log("Connected to DB!");
-  try {
-    await db.createCollection(IOCONNECTION, { capped: true, size: 1e6 });
-  } catch (e) {
-    console.log("Collection Already Exists");
-  }
-  const mongoCollection = db.collection(IOCONNECTION);
-  ioServer.adapter(createAdapter(mongoCollection));
-};
+const handleOpen = () => console.log("Connected to DB!");
 const handleError = (error) => console.log("DB Error", error);
 
 db.on("error", handleError);
