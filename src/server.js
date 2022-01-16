@@ -7,12 +7,12 @@ const app = express();
 const logger = morgan("dev");
 
 app.use(logger);
-app.use(express.static("src/client"));
+//app.use(express.static("src/client"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(corsMiddelware);
 
-app.get("/", (_, res) => res.render("index"));
+app.get("/", (_, res) => res.send("test"));
 
 app.use("/api", apiRouter);
 
