@@ -31,12 +31,12 @@ const friends = [
 ];
 
 const Me = {
-  name: "누군가",
+  name: "내이름",
   age: 23,
   profileImg:
-    "https://upload.wikimedia.org/wikipedia/commons/7/75/%EC%82%AC%EB%9E%8C.png",
+    "https://mblogthumb-phinf.pstatic.net/20150427_261/ninevincent_1430122791768m7oO1_JPEG/kakao_1.jpg?type=w2",
   backgroundImg:
-    "https://img.huffingtonpost.com/asset/5d715f643b0000683fcf22c0.jpeg?ops=scalefit_720_noupscale&format=webp",
+    "https://mblogthumb-phinf.pstatic.net/MjAxOTA3MTFfMjkz/MDAxNTYyODE4NzgyNzAz.spF-UPv2e4FUri41SGizxNMQRZb5VGbNs0H05cCWPfQg.e4yrDL47pXBmjyCfs4tRsi5mqU-ATAylfI42Wdu-RIQg.JPEG.yzzzii/output_935416776.jpg?type=w800",
   profileMusic: "Butter - BTS",
 };
 
