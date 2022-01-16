@@ -9,23 +9,24 @@ const PORT = process.env.PORT;
 
 const handleListening = () => console.log(`Server listening on port ${PORT}`);
 
-const httpServer = http.createServer(app);
-export const ioServer = new Server(httpServer, {
-  cors: {
-    origin: ["https://admin.socket.io"],
-    credentials: true,
-  },
-});
+app.listen(PORT, handleListening);
+// const httpServer = http.createServer(app);
+// export const ioServer = new Server(httpServer, {
+//   cors: {
+//     origin: ["https://admin.socket.io"],
+//     credentials: true,
+//   },
+// });
 
-instrument(ioServer, {
-  auth: false,
-});
+// instrument(ioServer, {
+//   auth: false,
+// });
 
-ioServer.on("connection", (socket) => {
-  socket.on("test", (text, done) => {
-    console.log(text);
-    done(text);
-  });
-});
+// ioServer.on("connection", (socket) => {
+//   socket.on("test", (text, done) => {
+//     console.log(text);
+//     done(text);
+//   });
+// });
 
-httpServer.listen(PORT, handleListening);
+// httpServer.listen(PORT, handleListening);
