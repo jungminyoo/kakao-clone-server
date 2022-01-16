@@ -2,7 +2,7 @@ import "dotenv/config";
 import { Server } from "socket.io";
 import http from "http";
 import { instrument } from "@socket.io/admin-ui";
-import "./db";
+//import "./db";
 import app from "./server";
 
 const PORT = process.env.PORT;

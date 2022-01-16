@@ -4,7 +4,9 @@
   "description": "Backend for Kakao Clone Coding Study Group. Using NodeJS, ExpressJS, Socket.IO",
   "main": "index.js",
   "scripts": {
-    "dev:server": "nodemon"
+    "start": "node build/index.js",
+    "dev:server": "nodemon",
+    "build:server": "babel src -d build"
   },
   "repository": {
     "type": "git",
@@ -13,6 +15,7 @@
   "author": "Jungmin Yoo",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.16.8",
     "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
     "@babel/preset-env": "^7.15.6",
