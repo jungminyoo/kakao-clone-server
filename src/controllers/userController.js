@@ -55,3 +55,11 @@ export const getUser = (req, res) => {
 export const getMe = (_, res) => {
   return res.send(Me);
 };
+
+export const postRegister = (req, res) => {
+  return res.send();
+};
+
+export const postLogin = (req, res) => {
+  return res.send();
+};
