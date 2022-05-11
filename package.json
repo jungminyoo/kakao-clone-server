@@ -17,11 +17,11 @@
   "devDependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.3.0"
+    "@babel/preset-env": "^7.15.6"
   },
   "dependencies": {
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0",
     "@babel/node": "^7.15.4",
     "babel-loader": "^8.2.2",
     "bcrypt": "^5.0.1",
