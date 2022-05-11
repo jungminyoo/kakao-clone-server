@@ -61,5 +61,5 @@ export const postRegister = (req, res) => {
 };
 
 export const postLogin = (req, res) => {
-  return res.send();
+  return res.send("Login");
 };
