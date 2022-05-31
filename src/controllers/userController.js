@@ -88,5 +88,5 @@ export const postLogin = async (req, res) => {
 
   const token = jwt.sign(user._id.toHexString(), "secretToken");
 
-  return res.status(200).json({ token });
+  return res.status(200).json({ token, user });
 };
