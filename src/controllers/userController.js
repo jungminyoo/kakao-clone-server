@@ -1,3 +1,7 @@
+import User from "../models/User";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+
 const friends = [
   {
     id: 1,
@@ -56,10 +60,33 @@ export const getMe = (_, res) => {
   return res.send(Me);
 };
 
-export const postRegister = (req, res) => {
-  return res.send("Register");
+export const postRegister = async (req, res) => {
+  const { id, password } = req.body;
+
+  const exists = await User.exists({ id });
+  if (exists) return res.status(400).send("ID Already Exists");
+
+  try {
+    await User.create({
+      id,
+      password,
+    });
+    return res.status(200).send("Register Success");
+  } catch (error) {
+    return res.status(400).send(error._message);
+  }
 };
 
-export const postLogin = (req, res) => {
-  return res.send("Login");
+export const postLogin = async (req, res) => {
+  const { id, password } = req.body;
+
+  const user = await User.findOne({ id });
+  if (!user) return res.status(404).send("User Not Found");
+
+  const ok = await bcrypt.compare(password, user.password);
+  if (!ok) return res.status(400).send("Wrong Password");
+
+  const token = jwt.sign(user._id.toHexString(), "secretToken");
+
+  return res.status(200).json({ token });
 };

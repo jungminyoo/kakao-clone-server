@@ -2,8 +2,8 @@ import bcrypt from "bcrypt";
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  age: { type: Number, required: true },
+  name: { type: String },
+  age: { type: Number },
   profileImg: {
     type: String,
     default:
@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
       "https://mblogthumb-phinf.pstatic.net/20150427_261/ninevincent_1430122791768m7oO1_JPEG/kakao_1.jpg?type=w2",
   },
   profileMusic: String,
-  email: { type: String, required: true },
+  id: { type: String, required: true },
   password: { type: String, required: true },
   friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 });
